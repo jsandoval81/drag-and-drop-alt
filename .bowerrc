@@ -1,0 +1,9 @@
+{
+    "directory": "bower_components",
+    "strict-ssl":    false,
+    "storage": {
+        "packages": ".bower-cache",
+        "registry": ".bower-registry"
+    },
+    "tmp": ".bower-tmp"
+}
