@@ -113,23 +113,23 @@ body {
 }
 .drag-container .drop-container .dest-dot[data-dot-color='black'][data-color-index='1'] {
   left: 45px;
-  top: 290px;
+  top: 298px;
 }
 .drag-container .drop-container .dest-dot[data-dot-color='blue'] {
   left: 274px;
-  top: 145px;
+  top: 153px;
 }
 .drag-container .drop-container .dest-dot[data-dot-color='red'] {
   left: 454px;
-  top: 170px;
+  top: 178px;
 }
 .drag-container .drop-container .dest-dot[data-dot-color='black'][data-color-index='2'] {
   left: 418px;
-  top: 385px;
+  top: 393px;
 }
 .drag-container .drop-container .dest-dot[data-dot-color='green'] {
   left: 142px;
-  top: 433px;
+  top: 441px;
 }
 .drag-container .drop-container .hover-target-good {
   background-image: url("../../img/valid.png");

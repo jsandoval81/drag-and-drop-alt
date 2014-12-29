@@ -27,16 +27,8 @@ module.exports = function (grunt) {
             },
             //== Lint and re-build the client JS .min file after client JS updates
             clientjs: {
-                files: ['client/**/*.js', '!client/assets/js/build/**/*', '!client/testing/**/*.js'],
+                files: ['client/**/*.js', '!client/assets/js/build/**/*'],
                 tasks: ['jshint:clientjs', 'concat:js', 'uglify'],
-                options: {
-                    spawn: true
-                }
-            },
-            //== Lint and run JS test code after updates
-            testjs: {
-                files: ['client/testing/unit/*.js'],
-                tasks: ['jshint:testjs', 'karma:unit:run'],
                 options: {
                     spawn: true
                 }
@@ -118,13 +110,6 @@ module.exports = function (grunt) {
                     'client/assets/js/custom.js'
                 ],
                 dest: 'client/assets/js/build/application.js'
-            },
-            //== Concat just the dependency libraries for testing
-            testDependencies: {
-                src: [
-                    
-                ],
-                dest: 'client/testing/dependencies/dependencies.js'
             }
         },
 
@@ -150,18 +135,6 @@ module.exports = function (grunt) {
                 src:  'client/assets/js/build/application.js',
                 dest: 'client/assets/js/build/application.min.js'
             }
-        },
-
-        //=============================
-        //== JavaScript client tests ==
-        //=============================
-        karma: {
-            options: {
-                configFile: 'karma.conf.js'
-            },
-            unit: {
-
-            }
         }
 
     });
@@ -176,11 +149,7 @@ module.exports = function (grunt) {
     //====================
     //== Default task
     grunt.registerTask('default', ['']);
-    //== Test server task (Concat JS dependencies and start server)
-    grunt.registerTask('test-server', [ 'concat:testDependencies', 'karma:unit' ]);
-    //== Test task (Lint and run JS tests)
-    grunt.registerTask('test', [ 'jshint:testjs', 'karma:unit:run' ]);
     //== Dev task (Prepare assets, start application, watch for changes)
-    grunt.registerTask('dev', [ 'less:dev', 'csslint:strict', 'concat:css', 'cssmin', 'jshint:clientjs', 'jshint:testjs', 'concat:js', 'concat:testDependencies', 'uglify', 'watch' ]);
+    grunt.registerTask('dev', [ 'less:dev', 'csslint:strict', 'concat:css', 'cssmin', 'jshint:clientjs', 'concat:js', 'uglify', 'watch' ]);
 
 };
